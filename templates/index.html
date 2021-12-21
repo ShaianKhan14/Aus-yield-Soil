@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Rice (Aus)</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="min_temperature" placeholder="min_temperature" required="required" />
+        <input type="text" name="urea" placeholder="urea" required="required" />
+          <input type="text" name="tsp" placeholder="tsp" required="required" />
+            <input type="text" name="mp" placeholder="mp" required="required" />
+              <input type="text" name="DAP" placeholder="DAP" required="required" />
+                <input type="text" name="Miscellaneous Lande" placeholder="Miscellaneous Land" required="required" />
+                  <input type="text" name="Noncalcareous Dark Grey Floodplain Soil" placeholder="Noncalcareous Dark Grey Floodplain Soil" required="required" />
+                    <input type="text" name="Noncalcareous Brown Floodplain Soil" placeholder="Noncalcareous Brown Floodplain Soil" required="required" />
+                      <input type="text" name="Brown Hill Soil" placeholder="Brown Hill Soil" required="required" />
+                        <input type="text" name="Grey Piedmont Soil" placeholder="Grey Piedmont Soil" required="required" />
+		<input type="text" name="soil moisture" placeholder="soil moisture" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
